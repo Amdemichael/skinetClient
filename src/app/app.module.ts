@@ -11,6 +11,8 @@ import { HomeModule } from './home/home.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ServerErrorComponent } from './server-error/server-error.component';
 import { ErrorInterceptor } from './core/Interceptors/error.interceptor';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './core/Interceptors/loading.interceptor';
 
 
 @NgModule({
@@ -25,10 +27,12 @@ import { ErrorInterceptor } from './core/Interceptors/error.interceptor';
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
-    HomeModule
+    HomeModule,
+    NgxSpinnerModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
