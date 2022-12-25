@@ -13,6 +13,7 @@ import { ServerErrorComponent } from './server-error/server-error.component';
 import { ErrorInterceptor } from './core/Interceptors/error.interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './core/Interceptors/loading.interceptor';
+import { BasketComponent } from './basket/basket.component';
 
 
 @NgModule({
